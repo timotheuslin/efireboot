@@ -1,0 +1,13 @@
+TARGET = efireboot.exe
+SOURCE = main.c efi-windows.c reboot-windows.c wincommon.c
+
+all :: $(TARGET)
+
+$(TARGET) :: $(SOURCE)
+    cl.exe $(SOURCE) /Fe:$(TARGET)
+    mt.exe -manifest UAC.manifest -outputresource:$(TARGET);#1
+
+clean ::
+    del *.obj *.exe
+
+cleanall :: clean

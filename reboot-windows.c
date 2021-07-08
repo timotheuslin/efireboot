@@ -1,3 +1,5 @@
+#pragma comment(lib, "user32.lib")
+
 #include <Windows.h>
 #include "wincommon.h"
 
